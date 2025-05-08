@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Feature List</title>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="px-4 py-4 bg-gray-600 text-white flex justify-between rounded-sm">
+    <img src="logo.jpg" class="h-10 w-10 cursor-pointer rounded-2xl shadow-lg animate-pulse" alt="Logo">
+    <ul class="px-28 py-0.5 flex space-x-28 justify-center">
+      <li class="mx-2 cursor-pointer font-bold">Home</li>
+      <li class="mx-2 cursor-pointer font-bold">Dashboard</li>
+      <li class="mx-2 cursor-pointer font-bold">About</li>
+      <li class="mx-2 cursor-pointer font-bold">Gallery</li>
+      <li class="mx-2 cursor-pointer font-bold">FAQ</li>
+    </ul>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="flex space-x-4 p-6">
+    <!-- Sidebar -->
+    <div class="bg-gray-500 p-6 rounded-3xl w-64 h-auto">
+      <h2 class="text-white font-bold font-mono text-xl mb-6 text-center underline">Features List</h2>
+      <ul class="space-y-4">
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="details">Details</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="images">Images</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="map">Map</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="facilities">Facilities</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="agent">Agent Details</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="owner">Owner Details</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="faq">FAQ</li>
+      </ul>
+    </div>
+
+    <!-- Content Area -->
+    <div id="content-area" class="flex-1 p-6 bg-white rounded-lg shadow-md text-black">
+      <h3 class="text-xl font-bold mb-4">Select a feature from the list</h3>
+      <p>Click an item on the left to display content here.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const featureItems = document.querySelectorAll('.feature-item');
+      const contentArea = document.getElementById('content-area');
+
+      const contentMap = {
+        details: "<h3 class='text-xl font-bold mb-2'>Details</h3><p>Details coming soon!</p>",
+        images: "<h3 class='text-xl font-bold mb-2'>Images</h3><p>Images coming soon!</p>",
+        map: "<h3 class='text-xl font-bold mb-2'>Map</h3><p>Map coming soon!</p>",
+        facilities: "<h3 class='text-xl font-bold mb-2'>Facilities</h3><p>Facilities coming soon!</p>",
+        agent: "<h3 class='text-xl font-bold mb-2'>Agent Details</h3><p>Agent details coming soon!</p>",
+        owner: "<h3 class='text-xl font-bold mb-2'>Owner Details</h3><p>Owner details coming soon!</p>",
+        faq: "<h3 class='text-xl font-bold mb-2'>FAQ</h3><p>FAQ coming soon!</p>"
+      };
+
+      featureItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const key = item.getAttribute('data-content');
+          contentArea.innerHTML = contentMap[key] || "<p>No content found.</p>";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

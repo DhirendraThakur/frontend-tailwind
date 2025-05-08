@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <link rel="stylesheet" href="input.css">
     <title>Document</title>
 </head>
@@ -33,11 +35,11 @@
             </p>
             <div class="text-gray-900 font-bold text-xl mb-2">House Code: S15002</div>
             <p class="text-gray-700 text-base">Location: Suryabinayak, Bhaktapur</p>
-            <li>Total area: 7 Ana</li>
-            <li>Facilitie: 24hr water service</li>
-            <li>Feature: Full Furnishes</li>
-            <li>Compound: 3 Ana compound</li>
-            <li>Contact: 999977799</li>
+            <ul>Total area: 7 Ana</li>
+            <ul>Facilitie: 24hr water service</li>
+            <ul>Feature: Full Furnishes</li>
+            <ul>Compound: 3 Ana compound</li>
+            <ul>Contact: 999977799</li>
             
           </div>
           <div class="flex items-center">
@@ -47,9 +49,14 @@
               <p class="text-gray-600">Aug 18</p>
             </div>
           </div>
-          <button class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
+          <button onclick="showPopup()" class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
         </div>
-<!-- Second box -->
+        <!-- <script>
+          function showPopup(){
+            alert(" Do you want to explore more?")
+          }
+        </script>
+Second box -->
         <div class=" second ml-30 h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/house3.jpg')" title="Woman holding a mug drop-shadow-cyan-500">
         </div>
         <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
@@ -62,11 +69,11 @@
             </p>
             <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16003</div>
             <p class="text-gray-700 text-base">Location: Imadol, Lalitpur</p>
-            <li>Total area: 4 Ana</li>
-            <li>Facilitie: 24hr water service</li>
-            <li>Feature: Full Furnishes</li>
-            <li>Compound: 2 kitta compound</li>
-            <li>Contact: 0116958</li>
+            <ul>Total area: 4 Ana</li>
+            <ul>Facilitie: 24hr water service</li>
+            <ul>Feature: Full Furnishes</li>
+            <ul>Compound: 2 kitta compound</li>
+            <ul>Contact: 0116958</li>
             
           </div>
           <div class="flex items-center">
@@ -76,7 +83,7 @@
               <p class="text-gray-600">Aug 18</p>
             </div>
           </div>
-          <button class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
+          <button class="route-button bg-green-500 rounded-md mt-4 hover:bg-gray-300  " data-target="/dash2"> Click Me</button>
         </div>
 
        
@@ -95,11 +102,11 @@
             </p>
             <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16004</div>
             <p class="text-gray-700 text-base">Location: Texas, USA</p>
-            <li>Total area: 12 Ana</li>
-            <li>Facilitie: 24hr water service</li>
-            <li>Feature: Full Furnishes</li>
-            <li>Compound: 3.5 Ana compound</li>
-            <li>Contact: +112 999977799</li>
+            <ul>Total area: 12 Ana</li>
+            <ul>Facilitie: 24hr water service</li>
+            <ul>Feature: Full Furnishes</li>
+            <ul>Compound: 3.5 Ana compound</li>
+            <ul>Contact: +112 999977799</li>
             
           </div>
           <div class="flex items-center">
@@ -109,8 +116,11 @@
               <p class="text-gray-600">Sep 21</p>
             </div>
           </div>
-          <button class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
+          <button id="explore-yes" class= " route-button bg-green-500 rounded-md mt-4 hover:bg-gray-300  " data-target="/dash1"> Explore</button>
         </div>
+        <!-- javascript for the popup massage -->
+         
+
 <!-- Second box -->
         <div class=" secondline ml-30 h-54 lg:h-auto lg:w-54 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/banner.jpg')" title="Woman holding a mug drop-shadow-cyan-500">
         </div>
@@ -124,11 +134,11 @@
             </p>
             <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16005</div>
             <p class="text-gray-700 text-base">Location: Banepa, Kavre</p>
-            <li>Total area: 3 Ana</li>
-            <li>Facilitie: 24hr water service</li>
-            <li>Feature: semi Furnishes</li>
-            <li>Compound: no compound</li>
-            <li>Contact: 0116958</li>
+            <ul>Total area: 3 Ana</li>
+            <ul>Facilitie: 24hr water service</li>
+            <ul>Feature: semi Furnishes</li>
+            <ul>Compound: no compound</li>
+            <ul>Contact: 0116958</li>
             
           </div>
           <div class="flex items-center">
@@ -160,11 +170,11 @@
               </p>
               <div class="text-gray-900 font-bold text-xl mb-2">House Code: S15007</div>
               <p class="text-gray-700 text-base">Location: Nala, Bhaktapur</p>
-              <li>Total area: 8 Ana</li>
-              <li>Facilitie: 24hr water service</li>
-              <li>Feature: Semi- Furnishes</li>
-              <li>Compound: 1 Ana compound</li>
-              <li>Contact: 978988874</li>
+              <ul>Total area: 8 Ana</li>
+              <ul>Facilitie: 24hr water service</li>
+              <ul>Feature: Semi- Furnishes</li>
+              <ul>Compound: 1 Ana compound</li>
+              <ul>Contact: 978988874</li>
               
             </div>
             <div class="flex items-center">
@@ -189,11 +199,11 @@
               </p>
               <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16009</div>
               <p class="text-gray-700 text-base">Location: Bagbagar, Kathmandu</p>
-              <li>Total area: 7 Ana</li>
-              <li>Facilitie(water) : 2 times </li>
-              <li>Feature: semi Furnishes</li>
-              <li>Compound: 1 compound</li>
-              <li>Contact: 00114455</li>
+              <ul>Total area: 7 Ana</li>
+              <ul>Facilitie(water) : 2 times </li>
+              <ul>Feature: semi Furnishes</li>
+              <ul>Compound: 1 compound</li>
+              <ul>Contact: 00114455</li>
               
             </div>
             <div class="flex items-center">
@@ -209,6 +219,15 @@
          
 
          </div>
+         <!-- Explore message (above footer) -->
+          <div id="explore-message" class="my-10 text-center">
+            <span class="text-lg">Do you want to explore more? <span title="More Options">❓</span></span>
+            <div class="mt-4">
+              <button id="explore-yes" class="bg-blue-500 px-4 py-2 rounded-md text-white">Yes</button>
+              <button id="explore-no" class="bg-red-500 px-4 py-2 rounded-md text-white ml-2">No</button>
+            </div>
+          </div>
+           
 
          <footer class="bg-white dark:bg-gray-700 rounded-md mt-5">
           <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -271,6 +290,43 @@
           </div>
       </footer>
 
+    
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const buttons = document.querySelectorAll('.route-button');
+          
+          buttons.forEach(button => {
+            button.addEventListener('click', () => {
+              const target = button.getAttribute('data-target');
+              if (target) {
+                window.location.href = target;
+              }
+            });
+          });
       
-</body>
+          const exploreYes = document.getElementById('explore-yes');
+          const exploreNo = document.getElementById('explore-no');
+      
+          if (exploreYes) {
+            exploreYes.addEventListener('click', () => {
+              const target = exploreYes.getAttribute('data-target'); // make sure this attribute is set in HTML
+              if (target) {
+                window.location.href = target;
+              }
+            });
+          }
+      
+          if (exploreNo) {
+            exploreNo.addEventListener('click', () => {
+              const message = document.getElementById('explore-message');
+              if (message) {
+                message.style.display = 'none';
+              }
+            });
+          }
+        });
+        
+       </script> 
+       
+  </body>
 </html>
