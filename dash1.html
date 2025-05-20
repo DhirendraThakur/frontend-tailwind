@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <!-- Flowbite JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/heroicons@2.0.13/dist/heroicons.min.js"></script>
+
+  
+
+
+
   <title>Feature List</title>
 </head>
 <body class="bg-gray-100">
@@ -17,6 +28,7 @@
       <li class="mx-2 cursor-pointer font-bold">About</li>
       <li class="mx-2 cursor-pointer font-bold">Gallery</li>
       <li class="mx-2 cursor-pointer font-bold">FAQ</li>
+      
     </ul>
   </nav>
 
@@ -33,13 +45,14 @@
         <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="agent">Agent Details</li>
         <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="owner">Owner Details</li>
         <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="faq">FAQ</li>
+        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="comment">Comment</li>
       </ul>
     </div>
 
     <!-- Content Area -->
     <div id="content-area" class="flex-1 p-6 bg-white rounded-lg shadow-md text-black">
-      <h3 class="text-xl font-bold mb-4">Select a feature from the list</h3>
-      <p>Click an item on the left to display content here.</p>
+      <h3 class="text-xl font-bold mb-4 text-center">Select a feature from the list</h3>
+      <p class="text-center">Click an item on the left to display content here.</p>
     </div>
   </div>
 
@@ -50,13 +63,34 @@
       const contentArea = document.getElementById('content-area');
 
       const contentMap = {
-        details: "<h3 class='text-xl font-bold mb-2'>Details</h3><p>Details coming soon!</p>",
-        images: "<h3 class='text-xl font-bold mb-2'>Images</h3><p>Images coming soon!</p>",
-        map: "<h3 class='text-xl font-bold mb-2'>Map</h3><p>Map coming soon!</p>",
-        facilities: "<h3 class='text-xl font-bold mb-2'>Facilities</h3><p>Facilities coming soon!</p>",
-        agent: "<h3 class='text-xl font-bold mb-2'>Agent Details</h3><p>Agent details coming soon!</p>",
-        owner: "<h3 class='text-xl font-bold mb-2'>Owner Details</h3><p>Owner details coming soon!</p>",
-        faq: "<h3 class='text-xl font-bold mb-2'>FAQ</h3><p>FAQ coming soon!</p>"
+        details: "<h3 class='text-xl font-bold mb-2 text-center'>Details</h3><p class='text-center font-semibold'>Details coming soon!</p>",
+        images: `
+        <h2 class="text-xl font-bold mb-2 text-center"> Images Collections </h2>
+
+        <div x-data="{ activeSlide: 0, slides: ['banner.jpg', 'house.jpg', 'house1.jpg', 'house2.jpg', 'house3.jpg'] }" class="relative w-full max-w-xl mx-auto">
+    <h3 class='text-xl font-bold mb-4 text-center'>Image Carousel</h3>
+    <div class="overflow-hidden rounded-lg">
+      <template x-for="(slide, index) in slides" :key="index">
+        <div x-show="activeSlide === index" class="w-full h-64 flex items-center justify-center">
+          <img :src="slide" alt="Slide" class="object-cover w-full h-full rounded-lg shadow-lg">
+        </div>
+      </template>
+    </div>
+    <!-- Controls -->
+    <div class="flex justify-between mt-4">
+      <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">&#8592;</button>
+      <button @click="activeSlide = (activeSlide === slides.length - 1) ? 0 : activeSlide + 1"
+              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-900">&#8594;</button>
+    </div>
+  </div>     
+        `,
+        map: "<h3 class='text-xl font-bold mb-2 text-center'>Map</h3><p class='text-center font-semibold'>Map coming soon!</p>",
+        facilities: "<h3 class='text-xl font-bold mb-2 text-center'>Facilities</h3><p class='text-center font-semibold'>Facilities coming soon!</p>",
+        agent: "<h3 class='text-xl font-bold mb-2 text-center'>Agent Details</h3><p class='text-center font-semibold'>Agent details coming soon!</p>",
+        owner: "<h3 class='text-xl font-bold mb-2 text-center'>Owner Details</h3><p class='text-center font-semibold'>Owner details coming soon!</p>",
+        faq: "<h3 class='text-xl font-bold mb-2 text-center' >FAQ</h3><p class='text-center font-semibold'>FAQ coming soon!</p>",
+        comment: "<h3 class='text-xl font-bold mb-2 text-center' >Comment</h3><p class='text-center font-semibold'>New comment coming soon!</p>"
       };
 
       featureItems.forEach(item => {
