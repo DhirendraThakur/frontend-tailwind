@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feature List</title>
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <!-- Flowbite JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/heroicons@2.0.13/dist/heroicons.min.js"></script>
-
-  
-
-
-
-  <title>Feature List</title>
 </head>
 <body class="bg-gray-100">
+
   <!-- Navbar -->
   <nav class="px-4 py-4 bg-gray-600 text-white flex justify-between rounded-sm">
     <img src="logo.jpg" class="h-10 w-10 cursor-pointer rounded-2xl shadow-lg animate-pulse" alt="Logo">
@@ -28,7 +22,6 @@
       <li class="mx-2 cursor-pointer font-bold">About</li>
       <li class="mx-2 cursor-pointer font-bold">Gallery</li>
       <li class="mx-2 cursor-pointer font-bold">FAQ</li>
-      
     </ul>
   </nav>
 
@@ -38,14 +31,14 @@
     <div class="bg-gray-500 p-6 rounded-3xl w-64 h-auto">
       <h2 class="text-white font-bold font-mono text-xl mb-6 text-center underline">Features List</h2>
       <ul class="space-y-4">
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="details">Details</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="images">Images</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="map">Map</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="facilities">Facilities</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="agent">Agent Details</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="owner">Owner Details</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="faq">FAQ</li>
-        <li class="feature-item font-mono text-white border border-slate-900 rounded shadow-lg p-2 text-center cursor-pointer" data-content="comment">Comment</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="details">Details</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="images">Images</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="map">Map</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="facilities">Facilities</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="agent">Agent Details</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="owner">Owner Details</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="faq">FAQ</li>
+        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="comment">Comment</li>
       </ul>
     </div>
 
@@ -56,47 +49,99 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
+  <!-- Google Maps API -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMapWrapper"></script>
+
   <script>
+    function initMap() {
+      const location = { lat: 37.4221, lng: -122.0841 };
+      const map = new google.maps.Map(document.getElementById("google-map"), {
+        zoom: 14,
+        center: location,
+      });
+      new google.maps.Marker({
+        position: location,
+        map: map,
+      });
+    }
+
+    // Wrapped to avoid immediate call
+    function initMapWrapper() {
+      window._mapApiLoaded = true;
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const featureItems = document.querySelectorAll('.feature-item');
       const contentArea = document.getElementById('content-area');
 
       const contentMap = {
-        details: "<h3 class='text-xl font-bold mb-2 text-center'>Details</h3><p class='text-center font-semibold'>Details coming soon!</p>",
-        images: `
-        <h2 class="text-xl font-bold mb-2 text-center"> Images Collections </h2>
-
-        <div x-data="{ activeSlide: 0, slides: ['banner.jpg', 'house.jpg', 'house1.jpg', 'house2.jpg', 'house3.jpg'] }" class="relative w-full max-w-xl mx-auto">
-    <h3 class='text-xl font-bold mb-4 text-center'>Image Carousel</h3>
-    <div class="overflow-hidden rounded-lg">
-      <template x-for="(slide, index) in slides" :key="index">
-        <div x-show="activeSlide === index" class="w-full h-64 flex items-center justify-center">
-          <img :src="slide" alt="Slide" class="object-cover w-full h-full rounded-lg shadow-lg">
-        </div>
-      </template>
-    </div>
-    <!-- Controls -->
-    <div class="flex justify-between mt-4">
-      <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
-              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">&#8592;</button>
-      <button @click="activeSlide = (activeSlide === slides.length - 1) ? 0 : activeSlide + 1"
-              class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-900">&#8594;</button>
-    </div>
-  </div>     
+        details: `
+          <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left text-gray-700">
+              <thead class="bg-blue-200">
+                <tr>
+                  <th class="px-6 py-3">#</th>
+                  <th class="px-6 py-3">House Number</th>
+                  <th class="px-6 py-3">Location</th>
+                  <th class="px-6 py-3">Master Bedroom</th>
+                  <th class="px-6 py-3">Normal Bedroom</th>
+                  <th class="px-6 py-3">Washroom</th>
+                  <th class="px-6 py-3">Compound</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white border-b">
+                  <th class="px-6 py-4">1</th>
+                  <td class="px-6 py-4">S16004</td>
+                  <td class="px-6 py-4">Texas, USA</td>
+                  <td class="px-6 py-4 text-center">3</td>
+                  <td class="px-6 py-4">5</td>
+                  <td class="px-6 py-4">4 (Common)</td>
+                  <td class="px-6 py-4">20 Foot</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         `,
-        map: "<h3 class='text-xl font-bold mb-2 text-center'>Map</h3><p class='text-center font-semibold'>Map coming soon!</p>",
+        images: `
+          <h2 class="text-xl font-bold mb-2 text-center">Images Collections</h2>
+          <div x-data="{ activeSlide: 0, slides: ['banner.jpg', 'house.jpg', 'house1.jpg', 'house2.jpg', 'house3.jpg'] }" class="relative w-full max-w-xl mx-auto">
+            <h3 class="text-xl font-bold mb-4 text-center">Image Carousel</h3>
+            <div class="overflow-hidden rounded-lg">
+              <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="activeSlide === index" class="w-full h-64 flex items-center justify-center">
+                  <img :src="slide" alt="Slide" class="object-cover w-full h-full rounded-lg shadow-lg" />
+                </div>
+              </template>
+            </div>
+            <div class="flex justify-between mt-4">
+              <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+                      class="bg-gray-700 text-white px-4 py-2 rounded">&#8592;</button>
+              <button @click="activeSlide = (activeSlide === slides.length - 1) ? 0 : activeSlide + 1"
+                      class="bg-gray-700 text-white px-4 py-2 rounded">&#8594;</button>
+            </div>
+          </div>
+        `,
+        map: `
+          <h3 class="text-xl font-bold mb-4 text-center">Map Location</h3>
+          <div id="google-map" class="w-full h-96 rounded-lg shadow-md"></div>
+        `,
         facilities: "<h3 class='text-xl font-bold mb-2 text-center'>Facilities</h3><p class='text-center font-semibold'>Facilities coming soon!</p>",
         agent: "<h3 class='text-xl font-bold mb-2 text-center'>Agent Details</h3><p class='text-center font-semibold'>Agent details coming soon!</p>",
         owner: "<h3 class='text-xl font-bold mb-2 text-center'>Owner Details</h3><p class='text-center font-semibold'>Owner details coming soon!</p>",
-        faq: "<h3 class='text-xl font-bold mb-2 text-center' >FAQ</h3><p class='text-center font-semibold'>FAQ coming soon!</p>",
-        comment: "<h3 class='text-xl font-bold mb-2 text-center' >Comment</h3><p class='text-center font-semibold'>New comment coming soon!</p>"
+        faq: "<h3 class='text-xl font-bold mb-2 text-center'>FAQ</h3><p class='text-center font-semibold'>FAQ coming soon!</p>",
+        comment: "<h3 class='text-xl font-bold mb-2 text-center'>Comment</h3><p class='text-center font-semibold'>New comment coming soon!</p>"
       };
 
       featureItems.forEach(item => {
         item.addEventListener('click', () => {
           const key = item.getAttribute('data-content');
           contentArea.innerHTML = contentMap[key] || "<p>No content found.</p>";
+
+          // Only init the map if that tab was clicked
+          if (key === "map" && window._mapApiLoaded) {
+            setTimeout(() => initMap(), 300);
+          }
         });
       });
     });
