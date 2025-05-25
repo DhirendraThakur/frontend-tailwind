@@ -76,7 +76,7 @@
 
       const contentMap = {
         details: `
-          <div class="relative overflow-x-auto">
+          <div class="relative overflow-x-auto rounded-md">
             <table class="w-full text-sm text-left text-gray-700">
               <thead class="bg-blue-200">
                 <tr>
@@ -90,7 +90,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="bg-white border-b">
+                <tr class="bg-yellow-200 border-b">
                   <th class="px-6 py-4">1</th>
                   <td class="px-6 py-4">S16004</td>
                   <td class="px-6 py-4">Texas, USA</td>
@@ -126,11 +126,99 @@
           <h3 class="text-xl font-bold mb-4 text-center">Map Location</h3>
           <div id="google-map" class="w-full h-96 rounded-lg shadow-md"></div>
         `,
-        facilities: "<h3 class='text-xl font-bold mb-2 text-center'>Facilities</h3><p class='text-center font-semibold'>Facilities coming soon!</p>",
-        agent: "<h3 class='text-xl font-bold mb-2 text-center'>Agent Details</h3><p class='text-center font-semibold'>Agent details coming soon!</p>",
-        owner: "<h3 class='text-xl font-bold mb-2 text-center'>Owner Details</h3><p class='text-center font-semibold'>Owner details coming soon!</p>",
+        facilities: `
+        <div class="realative overflow-x-auto rounded-md">
+          <table class="w-full text-sm text-left text-gray-700">
+            <thead class="bg-blue-200">
+              <tr>
+                <th class="px-6 py-3">#</th>
+                <th class="px-6 py-3">Garbage</th>
+                <th class="px-6 py-3">Water Supply</th>
+                <th class="px-6 py-3">Parking</th>
+                <th class="px-6 py-3">Wasteage</th>
+                <th class="px-6 py-3">Highway</th>               
+              </tr>
+            </thead>
+            <tbody class="">
+              <tr class="bg-gray-200 border-amber-800">
+                <th class="px-6 py-3"> 1</th>
+                <td class="px-6 py-3"> 2x week</td>
+                <td class="px-6 py-3"> 5hr per day</td>
+                <td class="px-6 py-3"> 1 Anan area</td>
+                <td class="px-6 py-3"> Underground System </td>
+                <td class="px-6 py-3"> 20 Sec from Gate </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+        `,
+        agent: `
+        <div class= "relative overflow-x-auto">
+          <table class= "w-full text-sm text-left ">
+          <thead class=" bg-gray-200">
+            <tr>
+              <th class="px-6 py-4"> #</th>
+              <th class="px-6 py-4"> Name: </th>
+              <th class="px-6 py-4"> Address: </th>
+              <th class="px-6 py-4"> Contact No: </th>              
+            </tr>
+          </thead>
+          <tbody class="">
+            <tr class= "bg-purple-200">
+              <th class="px-6 py-4"> 1</th>
+              <td class="px-6 py-4"> Dikshya KC </td>
+              <td class="px-6 py-4"> California, USA </td>
+              <td class="px-6 py-4">+1 971 122 9924  </td>
+            </tr>
+          </tbody>
+        </table>
+
+        </div>
+        
+        `,
+        owner:`
+        <div class ="relative overflow-x-auto rounded-md">
+          <table class ="w-full text-sm text-left">
+            <thead>
+              <tr class="bg-slate-400">
+                <th class="px-6 py-4"> # </th>
+                <th class="px-6 py-4"> Name: </th>
+                <th class="px-6 py-4"> Address:  </th>
+                <th class="px-6 py-4"> Contact No: </th>
+              </tr>
+            </thed>
+            <tbody>
+              <tr class="bg-gray-200">
+                <th class="px-4 py-3"> 1 </th>
+                <td class="px-4 py-3"> Dhirendra Thakur </td>
+                <td class="px-4 py-3"> California , USA </td>
+                <td class="px-4 py-3"> +1 997 721 3312 </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        `,
         faq: "<h3 class='text-xl font-bold mb-2 text-center'>FAQ</h3><p class='text-center font-semibold'>FAQ coming soon!</p>",
-        comment: "<h3 class='text-xl font-bold mb-2 text-center'>Comment</h3><p class='text-center font-semibold'>New comment coming soon!</p>"
+        comment: `
+        <section class="bg-white dark:bg-gray-700 py-8 lg:py-16 antialiased">
+          <div class ="max-w-screen-2xl mx-auto px-4"> 
+            <div class="flex justify-between items-center mb-6">
+              <h2 class= "text-lg lg:text-2xl font-bold text-gray-900 dark:text-white"> Comment (50) </h2>
+            </div>
+            <form class="mb-6">
+              <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                <label for="comment" class="sr-only"> Your Comment</label>
+                <textarea id="comment" rows="6"
+                class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                placeholder="Write a comment..." required></textarea>
+              </div>
+              <button type="subit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-green-200 dark:focus:ring-green-900 hover:bg-gray-300"> Post Comment </button>
+            </form>
+          </div>
+        </section>
+        `
       };
 
       featureItems.forEach(item => {
