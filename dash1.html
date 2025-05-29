@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  <script src="script.js"></script>
 </head>
 <body class="bg-gray-100">
 
@@ -17,8 +18,8 @@
   <nav class="px-4 py-4 bg-gray-600 text-white flex justify-between rounded-sm">
     <img src="logo.jpg" class="h-10 w-10 cursor-pointer rounded-2xl shadow-lg animate-pulse" alt="Logo">
     <ul class="px-28 py-0.5 flex space-x-28 justify-center">
-      <li class="mx-2 cursor-pointer font-bold">Home</li>
-      <li class="mx-2 cursor-pointer font-bold">Dashboard</li>
+      <li class="mx-2 cursor-pointer font-bold" onclick="window.location.href='index.html'">Home</li>
+      <li class="mx-2 cursor-pointer font-bold" onclick="window.location.href='dashboard.html'">Dashboard</li>
       <li class="mx-2 cursor-pointer font-bold">About</li>
       <li class="mx-2 cursor-pointer font-bold">Gallery</li>
       <li class="mx-2 cursor-pointer font-bold">FAQ</li>
@@ -37,7 +38,7 @@
         <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="facilities">Facilities</li>
         <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="agent">Agent Details</li>
         <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="owner">Owner Details</li>
-        <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="faq">FAQ</li>
+        
         <li class="feature-item text-white font-mono border rounded shadow-lg p-2 text-center cursor-pointer" data-content="comment">Comment</li>
       </ul>
     </div>
@@ -200,7 +201,10 @@
           </table>
         </div>
         `,
-        faq: "<h3 class='text-xl font-bold mb-2 text-center'>FAQ</h3><p class='text-center font-semibold'>FAQ coming soon!</p>",
+        faq: `
+        
+        
+        `,
         comment: `
         <section class="bg-white dark:bg-gray-700 py-8 lg:py-16 antialiased">
           <div class ="max-w-screen-2xl mx-auto px-4"> 

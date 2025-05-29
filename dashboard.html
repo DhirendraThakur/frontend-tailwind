@@ -14,219 +14,77 @@
     <img src="logo.jpg" class=" h-10 w-10 cursor-pointer rounded-2xl shadow-lg backdrop-blur-0 animate-pulse" alt=""
         srcset="">
     <ul class="px-28 py-0.5 flex space-x-28 justify-center ">
-        <li class="mx-2 cursor-pointer  font-bold underline-offset-0 ">Home</li>
+        <li class="mx-2 cursor-pointer  font-bold underline-offset-0  " onclick="window.location.href='index.html'">Home</li>
         <li class="mx-2 cursor-pointer  font-bold underline-offset-0 ">Dashboard</li>
         <li class="mx-2 cursor-pointer font-bold ">About</li>
         <li class="mx-2 cursor-pointer font-bold">Gallary</li>
         <li class="mx-2 cursor-pointer font-semibold text-yellow">FAQ</li>
     </ul>
 </nav>
-    <h1 class="text-center font-extrabold text-3xl font-serif hover:text-yellow-300 cursor-pointer italic border:gray-200 border:rounded-md bg-gray-300 rounded-lg animate-pulse">Click on Read More to know about the specific properties</h1>
-    <div class="first  max-w-sm w-full lg:max-w-full lg:flex mt-3  bg-gray-50 ml-70  border: rounded-md">
-        <div class="h-28 lg:h-auto lg:w-28 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/house2.jpg')" title="House details">
+<h1 class="flex items-center justify-center gap-2 text-center font-extrabold text-3xl font-serif hover:text-yellow-300 cursor-pointer italic border border-gray-200 bg-gray-300 rounded-lg ">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 14v-6h4v6m5-14l2 2m-16 0l2-2" />
+  </svg>
+  House Listing
+</h1>
+    <main class=" container mx-auto px-4 py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <!-- first box -->
+        <div class="bg-gray-300 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-150">
+          <img src="house1.jpg" alt="House 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">Modern Family Home</h2>
+          <p class="text-gray-600 text-sm">3 Bed • 2 Bath • 1,800 sqft</p>
+          <p class="text-green-600 font-bold text-lg mt-2">$350,000</p>        
+        <button id="explore-yes" class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 mt-4 ml-4 rounded-md shadow-md hover:bg-green-600 hover:scale-105 transition transform duration-200 ease-in-out"  onclick="window.location.href='dash1.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          Read More
+        </button>
         </div>
-        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Members only
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">House Code: S15002</div>
-            <p class="text-gray-700 text-base">Location: Suryabinayak, Bhaktapur</p>
-            <ul>Total area: 7 Ana</ul>
-            <ul>Facilitie: 24hr water service</ul>
-            <ul>Feature: Full Furnishes</ul>
-            <ul>Compound: 3 Ana compound</ul>
-            <ul>Contact: 999977799</ul>
-            
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="banner.jpg" alt="Avatar of Jonathan Reinink">
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none blur-sm">Jonathan Reinink</p>
-              <p class="text-gray-600">Aug 18</p>
-            </div>
-          </div>
-          <button onclick="showPopup()" class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
         </div>
-        <!-- <script>
-          function showPopup(){
-            alert(" Do you want to explore more?")
-          }
-        </script>
-Second box -->
-        <div class=" second ml-30 h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/house3.jpg')" title="Woman holding a mug drop-shadow-cyan-500">
-        </div>
-        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Members only
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16003</div>
-            <p class="text-gray-700 text-base">Location: Imadol, Lalitpur</p>
-            <ul>Total area: 4 Ana</ul>
-            <ul>Facilitie: 24hr water service</ul>
-            <ul>Feature: Full Furnishes</ul>
-            <ul>Compound: 2 kitta compound</ul>
-            <ul>Contact: 0116958</ul>
-            
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="banner.jpg" alt="Avatar of Jonathan Reinink">
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none blur-sm">Jonathan Reinink</p>
-              <p class="text-gray-600">Aug 18</p>
-            </div>
-          </div>
-          <button class="route-button bg-green-500 rounded-md mt-4 hover:bg-gray-300  " data-target="/dash2"> Click Me</button>
-        </div>
+        <!-- Second box -->
+         <div class="bg-gray-300 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-100 ">
+          <img src="house2.jpg" alt="House 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">Modern Family Banglow</h2>
+          <p class="text-gray-600 text-sm"> 4 normsl Bed • 2 Master Bed • 4 Bathroom • 2500sqft </p>
+          <p class="text-green-600 font-bold text-lg mt-2"> $1 Million</p>
+          <button id="explore-yes" class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 mt-4 ml-4 rounded-md shadow-md hover:bg-green-600 hover:scale-105 transition transform duration-200 ease-in-out"  onclick="window.location.href='dash1.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          Read More
+        </button>
 
-       
-      </div>
-      <!-- second line start from here -->
-      <div class="secondline max-w-sm w-full lg:max-w-full lg:flex mt-3  bg-gray-50 ml-70  border: rounded-md">
-        <div class="h-28 lg:h-auto lg:w-28 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/house4.jpg')" title="Woman holding a mug">
         </div>
-        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Members only
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16004</div>
-            <p class="text-gray-700 text-base">Location: Texas, USA</p>
-            <ul>Total area: 12 Ana</ul>
-            <ul>Facilitie: 24hr water service</ul>
-            <ul>Feature: Full Furnishes</ul>
-            <ul>Compound: 3.5 Ana compound</ul>
-            <ul>Contact: +112 999977799</ul>
-            
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="house4.jpg" alt="Avatar of Jonathan Reinink">
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none blur-sm">Dhirendra Thakur</p>
-              <p class="text-gray-600">Sep 21</p>
-            </div>
-          </div>
-          <button id="explore-yes" class= " route-button bg-green-500 rounded-md mt-4 hover:bg-gray-300  " data-target="/dash1"> Explore</button>
-        </div>
-        <!-- javascript for the popup massage -->
-         
-
-<!-- Second box -->
-        <div class=" secondline ml-30 h-54 lg:h-auto lg:w-54 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/banner.jpg')" title="Woman holding a mug drop-shadow-cyan-500">
-        </div>
-        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Members only
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16005</div>
-            <p class="text-gray-700 text-base">Location: Banepa, Kavre</p>
-            <ul>Total area: 3 Ana</ul>
-            <ul>Facilitie: 24hr water service</ul>
-            <ul>Feature: semi Furnishes</ul>
-            <ul>Compound: no compound</ul>
-            <ul>Contact: 0116958</ul>
-            
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="banner.jpg" alt="Avatar of Jonathan Reinink">
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none ">Ram Bhandari</p>
-              <p class="text-gray-600">Aug 20</p>
-            </div>
-          </div>
-          <button class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
-        </div>
-
-       
-        
-        </div>
-
-        <!-- third line start from here -->
-         <div class="first max-w-sm w-full lg:max-w-full lg:flex mt-3  bg-gray-50 ml-70  border: rounded-md border-double outline-red-800 ">
-
-          <div class=" h-28 lg:h-auto lg:w-28 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/house1.jpg')" title="Woman holding a mug">
-          </div>
-          <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <div class="mb-8">
-              <p class="text-sm text-gray-600 flex items-center">
-                <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-                Members only
-              </p>
-              <div class="text-gray-900 font-bold text-xl mb-2">House Code: S15007</div>
-              <p class="text-gray-700 text-base">Location: Nala, Bhaktapur</p>
-              <ul>Total area: 8 Ana</ul>
-              <ul>Facilitie: 24hr water service</ul>
-              <ul>Feature: Semi- Furnishes</ul>
-              <ul>Compound: 1 Ana compound</ul>
-              <ul>Contact: 978988874</ul>
-              
-            </div>
-            <div class="flex items-center">
-              <img class="w-10 h-10 rounded-full mr-4" src="banner.jpg" alt="Avatar of Jonathan Reinink">
-              <div class="text-sm">
-                <p class="text-gray-900 leading-none">Ravi Thapa</p>
-                <p class="text-gray-600">Jun 18</p>
-              </div>
-            </div>
-            <button class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
-          </div>
-  <!-- Second box -->
-          <div class=" second ml-30 h-54 lg:h-auto lg:w-54 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/house2.jpg')" title="Woman holding a mug drop-shadow-cyan-500">
-          </div>
-          <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <div class="mb-8">
-              <p class="text-sm text-gray-600 flex items-center">
-                <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-                Members only
-              </p>
-              <div class="text-gray-900 font-bold text-xl mb-2">House Code: S16009</div>
-              <p class="text-gray-700 text-base">Location: Bagbagar, Kathmandu</p>
-              <ul>Total area: 7 Ana</ul>
-              <ul>Facilitie(water) : 2 times </ul>
-              <ul>Feature: semi Furnishes</ul>
-              <ul>Compound: 1 compound</ul>
-              <ul>Contact: 00114455</ul>
-              
-            </div>
-            <div class="flex items-center">
-              <img class="w-10 h-10 rounded-full mr-4" src="banner.jpg" alt="Avatar of Jonathan Reinink">
-              <div class="text-sm">
-                <p class="text-gray-900 leading-none">Jonathan Reinink</p>
-                <p class="text-gray-600">Jan 18</p>
-              </div>
-            </div>
-            <button class="bg-green-500 rounded-md mt-4 hover:bg-gray-300  "> View</button>
-          </div>
-  
-         
 
          </div>
-         <!-- Explore message (above footer) -->
-          <div id="explore-message" class="my-10 text-center">
-            <span class="text-lg">Do you want to explore more? <span title="More Options">❓</span></span>
-            <div class="mt-4">
-              <button id="explore-yes" class="bg-blue-500 px-4 py-2 rounded-md text-white">Yes</button>
-              <button id="explore-no" class="bg-red-500 px-4 py-2 rounded-md text-white ml-2">No</button>
-            </div>
-          </div>
+
+         <!-- third box -->
+
+
+         <div class="bg-gray-300 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-100 ">
+          <img src="house3.jpg" alt="House 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">Modern Family Banglow</h2>
+          <p class="text-gray-600 text-sm"> 4 normsl Bed • 2 Master Bed • 4 Bathroom • 2500sqft </p>
+          <p class="text-green-600 font-bold text-lg mt-2"> $1 Million</p>
+          <button id="explore-yes" class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 mt-4 ml-4 rounded-md shadow-md hover:bg-green-600 hover:scale-105 transition transform duration-200 ease-in-out"  onclick="window.location.href='dash1.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          Read More
+        </button>
+
+        </div>
+
+         </div>
+        
+      </div>
+    </main>
+         
            
 
          <footer class="bg-white dark:bg-gray-700 rounded-md mt-5">
